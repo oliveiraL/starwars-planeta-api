@@ -5,7 +5,6 @@ import br.starwars.planetas.api.models.Planeta
 import br.starwars.planetas.api.repository.PlanetaRepository
 import org.springframework.stereotype.Service
 import java.util.*
-import javax.validation.ConstraintViolationException
 
 
 @Service
