@@ -26,8 +26,13 @@ class PlanetaService(val planetaRepository: PlanetaRepository) {
     fun buscarTodos(): List<Planeta> =
             planetaRepository.findAll()
 
-    fun deletarPlaneta(id: Long): Unit =
-            planetaRepository.deleteById(id)
+    fun deletarPlaneta(id: Long): Unit {
+        val planeta = planetaRepository.findById(id)
+        if (planeta.isPresent)
+            planetaRepository.delete(planeta.get())
+        else
+            throw PlanetaException("planeta não cadastrado")
+    }
 
     private fun recuperarQuantidadeDeFilmesQueApareceu(nome: String): Int {
         val resposta = RequestHTTP.get("http://swapi.co/api/planets?search=$nome")
