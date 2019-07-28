@@ -17,7 +17,7 @@ import kotlin.streams.toList
 
 
 @ControllerAdvice
-class CustomGlobalExceptionHandler : ResponseEntityExceptionHandler() {
+class ValidationExceptionHandler : ResponseEntityExceptionHandler() {
 
     @ExceptionHandler(ConstraintViolationException::class)
     @Throws(IOException::class)
