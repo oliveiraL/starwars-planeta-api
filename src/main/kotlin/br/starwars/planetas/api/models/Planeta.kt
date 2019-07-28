@@ -1,5 +1,6 @@
 package br.starwars.planetas.api.models
 
+
 import javax.persistence.*
 import javax.validation.constraints.NotBlank
 
@@ -20,5 +21,7 @@ data class Planeta(
         val clima: String,
 
         @field:NotBlank
-        val terreno: String
+        val terreno: String,
+
+        var filmes: Int = 0
 )
